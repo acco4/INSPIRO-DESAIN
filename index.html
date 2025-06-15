@@ -506,6 +506,96 @@
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
         }
 
+        /* قسم الفريق الإداري */
+        .team-section {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f1f1f1;
+            margin: 0 auto 1.5rem;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .team-member:hover .member-image {
+            border-color: var(--primary-color);
+        }
+
+        .member-name {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-position {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .member-social a {
+            color: #555;
+            background: #f1f1f1;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .member-social a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* تأثير الصورة المتحركة */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animated-image {
+            animation: float 3s ease-in-out infinite;
+        }
+
         /* الفوتر */
         footer {
             background: linear-gradient(135deg, #2b2b2b, #111);
@@ -642,6 +732,11 @@
                 margin-left: 1rem;
                 margin-right: 1rem;
             }
+            
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -656,7 +751,7 @@
                 <ul>
                     <li><a href="#services">الخدمات</a></li>
                     <li><a href="#testimonials">آراء العملاء</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#contact">اطلب تصميمك الآن</a></li>
                 </ul>
             </nav>
         </header>
@@ -820,6 +915,33 @@
                         <i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب
                     </button>
                 </form>
+            </div>
+        </section>
+
+        <!-- قسم الفريق الإداري الجديد -->
+        <section class="team-section fade-in">
+            <h2 class="section-title">فريقنا الإداري</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="https://i.imgur.com/undefined" alt="CEO" class="member-image animated-image">
+                    <h3 class="member-name">Mohanad Mirghani</h3>
+                    <p class="member-position">Chief Executive Officer</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://i.imgur.com/AigHLVi.jpg" alt="Marketing Manager" class="member-image animated-image">
+                    <h3 class="member-name">Atheel Mohammed</h3>
+                    <p class="member-position">Marketing Director</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
 
