@@ -17,6 +17,7 @@
             --light-text: #FFFFFF;
             --card-bg: #FFFFFF;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --gold-color: #FFD700;
         }
 
         * {
@@ -30,7 +31,7 @@
             background-color: var(--background-color);
             color: var(--text-color);
             direction: rtl;
-            background-image: url('file:///C:/Users/ACER/Downloads/%D8%B5%D9%88%D8%B1%20%D8%A7%D9%84%D8%BA%D9%84%D8%A7%D9%81%20.png');
+            background-image: url('https://i.imgur.com/Zam3e5M.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -38,13 +39,13 @@
 
         /* طبقة شفافة لتسهيل قراءة المحتوى */
         .content-overlay {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.92);
             min-height: 100vh;
         }
 
         /* الهيدر */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.97);
             box-shadow: var(--shadow);
             padding: 1rem 2rem;
             position: fixed;
@@ -54,6 +55,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(5px);
         }
 
         .logo-container {
@@ -62,13 +64,15 @@
         }
 
         .logo {
-            height: 50px;
+            height: 60px;
             margin-left: 15px;
+            border-radius: 8px;
         }
 
         header h1 {
             color: var(--primary-color);
             font-size: 1.8rem;
+            font-weight: 700;
         }
 
         nav ul {
@@ -83,8 +87,9 @@
         nav ul li a {
             text-decoration: none;
             color: var(--text-color);
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
+            font-size: 1.1rem;
         }
 
         nav ul li a:hover {
@@ -93,9 +98,9 @@
 
         /* القسم الرئيسي */
         .hero {
-            background: linear-gradient(135deg, rgba(74, 0, 224, 0.8), rgba(0, 198, 251, 0.8));
+            background: linear-gradient(135deg, rgba(74, 0, 224, 0.85), rgba(0, 198, 251, 0.85));
             color: var(--light-text);
-            padding: 8rem 2rem 4rem;
+            padding: 10rem 2rem 6rem;
             text-align: center;
             margin-top: 70px;
             position: relative;
@@ -108,102 +113,133 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
         }
 
         .cta-button {
             display: inline-block;
             background-color: var(--light-text);
             color: var(--primary-color);
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
             box-shadow: var(--shadow);
+            font-size: 1.1rem;
+            border: 2px solid transparent;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            background-color: transparent;
+            color: white;
+            border-color: white;
         }
 
         /* قسم الخدمات */
         .services {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.97);
         }
 
-        .services h2 {
-            font-size: 2rem;
+        .section-title {
+            font-size: 2.5rem;
             margin-bottom: 3rem;
             color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
         .service-card {
             background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
+            border-radius: 12px;
+            padding: 2.2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #eee;
+            border: none;
+            overflow: hidden;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
             color: var(--light-text);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .service-card h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
         .service-image {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             transition: transform 0.3s;
-            border: 1px solid #ddd;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .service-card:hover .service-image {
@@ -212,110 +248,269 @@
 
         /* قسم آراء العملاء */
         .testimonials {
-            padding: 4rem 2rem;
-            background-color: #f5f5f5;
+            padding: 6rem 2rem;
+            background-color: #f8f9ff;
             text-align: center;
         }
 
         .testimonials h2 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
             color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .testimonials h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .testimonial-card {
             background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             text-align: right;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 5rem;
+            color: rgba(74, 0, 224, 0.1);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-family: serif;
+            line-height: 1;
         }
 
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            direction: ltr;
+        }
+
+        .rating i {
+            color: var(--gold-color);
+            margin: 0 2px;
+            font-size: 1.2rem;
         }
 
         .testimonial-author {
             font-weight: bold;
             color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .testimonial-position {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
         }
 
         /* قسم اتصل بنا */
         .contact {
-            padding: 4rem 2rem;
-            background-color: white;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 255, 0.95));
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/Zam3e5M.jpg') center/cover;
+            opacity: 0.05;
+            z-index: 0;
         }
 
         .contact h2 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
             color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .contact h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            z-index: 1;
+        }
+
+        .contact-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            flex: 1;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: right;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: white;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            font-size: 1.3rem;
+            margin-left: 15px;
+            margin-top: 3px;
+        }
+
+        .info-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-content p {
+            opacity: 0.9;
+            line-height: 1.6;
         }
 
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+            flex: 1;
+            padding: 3rem;
             text-align: right;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #444;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.8rem;
+            padding: 1rem;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
             font-family: 'Tajawal', sans-serif;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 0, 224, 0.1);
+            outline: none;
         }
 
         .form-group textarea {
             height: 150px;
+            resize: vertical;
         }
 
         .whatsapp-button {
             background-color: #25D366;
             color: white;
             border: none;
-            padding: 1rem 2rem;
-            border-radius: 5px;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             width: 100%;
             font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-button:hover {
             background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
         }
 
         /* الفوتر */
         footer {
-            background-color: #333;
+            background: linear-gradient(135deg, #2b2b2b, #111);
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem 2rem;
             text-align: center;
         }
 
@@ -324,22 +519,129 @@
             justify-content: space-around;
             flex-wrap: wrap;
             margin-bottom: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
         }
 
         .footer-section {
             flex: 1;
             min-width: 250px;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            padding: 0 1.5rem;
         }
 
         .footer-section h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--secondary-color);
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* تأثيرات عامة */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
         }
     </style>
 </head>
@@ -347,7 +649,7 @@
     <div class="content-overlay">
         <header>
             <div class="logo-container">
-                <img src="file:///C:/Users/ACER/Downloads/20250614_1735_%D8%A5%D9%84%D9%87%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85_simple_compose_01jxqdsqkae7srtjpjb5xwpdsa.png" alt="INSPIRO DESAIN Logo" class="logo">
+                <img src="https://i.imgur.com/xYxVTM2.png" alt="INSPIRO DESAIN Logo" class="logo">
                 <h1>INSPIRO DESAIN</h1>
             </div>
             <nav>
@@ -359,7 +661,7 @@
             </nav>
         </header>
 
-        <section class="hero">
+        <section class="hero fade-in">
             <div class="hero-content">
                 <h2>إبداع بلا حدود في التصميم الرقمي</h2>
                 <p>نقدم حلول تصميم احترافية تناسب احتياجات عملك</p>
@@ -367,8 +669,8 @@
             </div>
         </section>
 
-        <section id="services" class="services">
-            <h2>خدماتنا</h2>
+        <section id="services" class="services fade-in">
+            <h2 class="section-title">خدماتنا</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -376,7 +678,7 @@
                     </div>
                     <h3>تصميم الشعارات</h3>
                     <p>تصميم شعار فريد يعبر عن هوية علامتك التجارية</p>
-                    <img src="file:///C:/Users/ACER/Downloads/1.jpg" alt="تصميم الشعارات" class="service-image">
+                    <img src="https://i.imgur.com/AjIXwKu.jpg" alt="تصميم الشعارات" class="service-image">
                 </div>
                 
                 <div class="service-card">
@@ -385,7 +687,7 @@
                     </div>
                     <h3>تصميم البوسترات</h3>
                     <p>تصاميم جذابة لافتاتك الدعائية والترويجية</p>
-                    <img src="file:///C:/Users/ACER/Downloads/%D8%A8%D9%88%D8%B3%D8%AA%D8%B1.jpg" alt="تصميم البوسترات" class="service-image">
+                    <img src="https://i.imgur.com/aCIQsOH.jpg" alt="تصميم البوسترات" class="service-image">
                 </div>
                 
                 <div class="service-card">
@@ -394,7 +696,7 @@
                     </div>
                     <h3>تصميم المواقع</h3>
                     <p>مواقع إلكترونية متكاملة وسريعة الاستجابة</p>
-                    <img src="file:///C:/Users/ACER/Downloads/%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%82%D8%B9.jpg" alt="تصميم المواقع" class="service-image">
+                    <img src="https://i.imgur.com/s9F3YId.jpg" alt="تصميم المواقع" class="service-image">
                 </div>
                 
                 <div class="service-card">
@@ -403,81 +705,153 @@
                     </div>
                     <h3>أنظمة الشركات</h3>
                     <p>حلول برمجية لإدارة أعمالك بكفاءة</p>
-                    <img src="file:///C:/Users/ACER/Downloads/%D8%A3%D9%86%D8%B8%D9%85%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA.jpg" alt="أنظمة الشركات" class="service-image">
+                    <img src="https://i.imgur.com/LkdCG6n.jpg" alt="أنظمة الشركات" class="service-image">
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="testimonials">
+        <section id="testimonials" class="testimonials fade-in">
             <h2>آراء العملاء</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"لقد كان العمل مع INSPIRO DESAIN تجربة رائعة. الشعار الذي صمموه لنا يعبر تمامًا عن هوية علامتنا التجارية."</p>
-                    <p class="testimonial-author">- أحمد محمد، مدير تسويق</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"لقد كان العمل مع INSPIRO DESAIN تجربة رائعة. الشعار الذي صمموه لنا يعبر تمامًا عن هوية علامتنا التجارية ويحمل رسالتنا بدقة."</p>
+                    <p class="testimonial-author">أحمد محمد</p>
+                    <p class="testimonial-position">مدير تسويق - شركة التقنية المبدعة</p>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"الموقع الإلكتروني الذي صمموه لنا ساعد في زيادة مبيعاتنا بنسبة 40%. فريق محترف جدًا."</p>
-                    <p class="testimonial-author">- سارة خالد، صاحبة متجر إلكتروني</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"الموقع الإلكتروني الذي صمموه لنا ساعد في زيادة مبيعاتنا بنسبة 40% خلال شهرين فقط. التصميم كان عصريًا وسهل الاستخدام."</p>
+                    <p class="testimonial-author">سارة خالد</p>
+                    <p class="testimonial-position">صاحبة متجر إلكتروني - متجر أزياء سارة</p>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"البوسترات الدعائية التي صمموها كانت مميزة وجذبت الكثير من العملاء لمعرضنا."</p>
-                    <p class="testimonial-author">- عمر عبدالله، منظم فعاليات</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"البوسترات الدعائية التي صمموها كانت مميزة وجذبت الكثير من العملاء لمعرضنا. الإبداع والاحترافية كانت واضحة في كل تفصيل."</p>
+                    <p class="testimonial-author">عمر عبدالله</p>
+                    <p class="testimonial-position">منظم فعاليات - معرض الفنون الدولي</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
-            <h2>اتصل بنا</h2>
-            <form class="contact-form" id="whatsappForm">
-                <div class="form-group">
-                    <label for="name">الاسم الكامل</label>
-                    <input type="text" id="name" required>
+        <section id="contact" class="contact fade-in">
+            <h2>اطلب تصميمك الآن</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h4>العنوان</h4>
+                            <p>الدمام، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="info-content">
+                            <h4>الهاتف</h4>
+                            <p>+966 50 753 9702</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="info-content">
+                            <h4>واتساب</h4>
+                            <p>+966 50 753 9702</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <div class="info-content">
+                            <h4>ساعات العمل</h4>
+                            <p>من 10 صباحًا إلى 5 مساءً</p>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="phone">رقم الهاتف</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="service">نوع الخدمة المطلوبة</label>
-                    <select id="service" required>
-                        <option value="">اختر الخدمة</option>
-                        <option value="logo">تصميم شعار</option>
-                        <option value="poster">تصميم بوستر</option>
-                        <option value="website">تصميم موقع</option>
-                        <option value="system">أنظمة الشركات</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">الرسالة</label>
-                    <textarea id="message" required></textarea>
-                </div>
-                <button type="button" class="whatsapp-button" onclick="sendViaWhatsApp()">
-                    <i class="fab fa-whatsapp"></i> إرسال عبر واتساب
-                </button>
-            </form>
+                <form class="contact-form" id="whatsappForm">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" required placeholder="أدخل اسمك الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" required placeholder="أدخل رقم هاتفك">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">نوع الخدمة المطلوبة</label>
+                        <select id="service" required>
+                            <option value="">اختر الخدمة</option>
+                            <option value="logo">تصميم شعار</option>
+                            <option value="poster">تصميم بوستر</option>
+                            <option value="website">تصميم موقع</option>
+                            <option value="system">أنظمة الشركات</option>
+                            <option value="other">خدمة أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" required placeholder="أخبرنا عن متطلباتك بالتفصيل"></textarea>
+                    </div>
+                    <button type="button" class="whatsapp-button" onclick="sendViaWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب
+                    </button>
+                </form>
+            </div>
         </section>
 
         <footer>
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>عن الشركة</h3>
-                    <p>INSPIRO DESAIN تقدم حلول تصميم إبداعية وعالية الجودة منذ 2015.</p>
+                    <p>INSPIRO DESAIN تقدم حلول تصميم إبداعية وعالية الجودة منذ 2025. نتميز بالإبداع والابتكار في تقديم حلول تصميمية تلبي احتياجات عملائنا.</p>
                 </div>
                 <div class="footer-section">
                     <h3>روابط سريعة</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="#services" style="color: white; text-decoration: none;">الخدمات</a></li>
-                        <li><a href="#testimonials" style="color: white; text-decoration: none;">آراء العملاء</a></li>
-                        <li><a href="#contact" style="color: white; text-decoration: none;">اتصل بنا</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#testimonials">آراء العملاء</a></li>
+                        <li><a href="#contact">اطلب تصميمك الآن</a></li>
+                        <li><a href="#">معرض الأعمال</a></li>
+                        <li><a href="#">مدونة التصميم</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>معلومات الاتصال</h3>
-                    <p>واتساب: +966 12 345 6789</p>
+                    <h3>خدماتنا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">تصميم الشعارات</a></li>
+                        <li><a href="#">تصميم الهوية البصرية</a></li>
+                        <li><a href="#">تصميم المواقع</a></li>
+                        <li><a href="#">تصميم التطبيقات</a></li>
+                        <li><a href="#">أنظمة إدارة الشركات</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 INSPIRO DESAIN. جميع الحقوق محفوظة.</p>
+                <p>&copy; 2025 INSPIRO DESAIN. جميع الحقوق محفوظة.</p>
             </div>
         </footer>
     </div>
@@ -497,17 +871,20 @@
             }
             
             // رقم واتساب الخاص بك
-            const whatsappNumber = "966123456789"; // استبدل برقمك الحقيقي
+            const whatsappNumber = "966507539702";
             
             // نص الرسالة
             const whatsappMessage = `
-                *طلب تصميم جديد*
+                *طلب تصميم جديد من موقع INSPIRO DESAIN*
                 
                 *الاسم:* ${name}
                 *رقم الهاتف:* ${phone}
                 *نوع الخدمة:* ${service}
-                *الرسالة:*
+                
+                *تفاصيل الطلب:*
                 ${message}
+                
+                الرجاء التواصل مع العميل في أقرب وقت ممكن
             `;
             
             // ترميز النص لرابط URL
@@ -525,6 +902,25 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // تأثيرات الظهور عند التمرير
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
