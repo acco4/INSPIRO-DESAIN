@@ -30,7 +30,7 @@
             background-color: var(--background-color);
             color: var(--text-color);
             direction: rtl;
-            background-image: url('https://via.placeholder.com/1920x1080');
+            background-image: url('file:///C:/Users/ACER/Downloads/%D8%B5%D9%88%D8%B1%20%D8%A7%D9%84%D8%BA%D9%84%D8%A7%D9%81%20.png');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -277,7 +277,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ddd;
@@ -289,8 +290,8 @@
             height: 150px;
         }
 
-        .submit-button {
-            background-color: var(--primary-color);
+        .whatsapp-button {
+            background-color: #25D366;
             color: white;
             border: none;
             padding: 1rem 2rem;
@@ -298,10 +299,16 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            font-size: 1.1rem;
         }
 
-        .submit-button:hover {
-            background-color: var(--accent-color);
+        .whatsapp-button:hover {
+            background-color: #128C7E;
         }
 
         /* الفوتر */
@@ -340,7 +347,7 @@
     <div class="content-overlay">
         <header>
             <div class="logo-container">
-                <img src="https://via.placeholder.com/50" alt="INSPIRO DESAIN Logo" class="logo">
+                <img src="file:///C:/Users/ACER/Downloads/20250614_1735_%D8%A5%D9%84%D9%87%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85_simple_compose_01jxqdsqkae7srtjpjb5xwpdsa.png" alt="INSPIRO DESAIN Logo" class="logo">
                 <h1>INSPIRO DESAIN</h1>
             </div>
             <nav>
@@ -369,7 +376,7 @@
                     </div>
                     <h3>تصميم الشعارات</h3>
                     <p>تصميم شعار فريد يعبر عن هوية علامتك التجارية</p>
-                    <img src="https://via.placeholder.com/300x180" alt="تصميم الشعارات" class="service-image">
+                    <img src="file:///C:/Users/ACER/Downloads/1.jpg" alt="تصميم الشعارات" class="service-image">
                 </div>
                 
                 <div class="service-card">
@@ -378,7 +385,7 @@
                     </div>
                     <h3>تصميم البوسترات</h3>
                     <p>تصاميم جذابة لافتاتك الدعائية والترويجية</p>
-                    <img src="https://via.placeholder.com/300x180" alt="تصميم البوسترات" class="service-image">
+                    <img src="file:///C:/Users/ACER/Downloads/%D8%A8%D9%88%D8%B3%D8%AA%D8%B1.jpg" alt="تصميم البوسترات" class="service-image">
                 </div>
                 
                 <div class="service-card">
@@ -387,7 +394,7 @@
                     </div>
                     <h3>تصميم المواقع</h3>
                     <p>مواقع إلكترونية متكاملة وسريعة الاستجابة</p>
-                    <img src="https://via.placeholder.com/300x180" alt="تصميم المواقع" class="service-image">
+                    <img src="file:///C:/Users/ACER/Downloads/%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%82%D8%B9.jpg" alt="تصميم المواقع" class="service-image">
                 </div>
                 
                 <div class="service-card">
@@ -396,7 +403,7 @@
                     </div>
                     <h3>أنظمة الشركات</h3>
                     <p>حلول برمجية لإدارة أعمالك بكفاءة</p>
-                    <img src="https://via.placeholder.com/300x180" alt="أنظمة الشركات" class="service-image">
+                    <img src="file:///C:/Users/ACER/Downloads/%D8%A3%D9%86%D8%B8%D9%85%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA.jpg" alt="أنظمة الشركات" class="service-image">
                 </div>
             </div>
         </section>
@@ -421,22 +428,18 @@
 
         <section id="contact" class="contact">
             <h2>اتصل بنا</h2>
-            <form class="contact-form">
+            <form class="contact-form" id="whatsappForm">
                 <div class="form-group">
                     <label for="name">الاسم الكامل</label>
                     <input type="text" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">البريد الإلكتروني</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
                     <label for="phone">رقم الهاتف</label>
-                    <input type="tel" id="phone">
+                    <input type="tel" id="phone" required>
                 </div>
                 <div class="form-group">
                     <label for="service">نوع الخدمة المطلوبة</label>
-                    <select id="service" class="form-group input">
+                    <select id="service" required>
                         <option value="">اختر الخدمة</option>
                         <option value="logo">تصميم شعار</option>
                         <option value="poster">تصميم بوستر</option>
@@ -448,7 +451,9 @@
                     <label for="message">الرسالة</label>
                     <textarea id="message" required></textarea>
                 </div>
-                <button type="submit" class="submit-button">إرسال الطلب</button>
+                <button type="button" class="whatsapp-button" onclick="sendViaWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> إرسال عبر واتساب
+                </button>
             </form>
         </section>
 
@@ -468,8 +473,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>معلومات الاتصال</h3>
-                    <p>البريد: info@inspiro.com</p>
-                    <p>الهاتف: +966 12 345 6789</p>
+                    <p>واتساب: +966 12 345 6789</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -479,7 +483,41 @@
     </div>
 
     <script>
-        // يمكنك إضافة الأكواد الجافاسكريبت هنا
+        // كود لفتح واتساب مع البيانات المدخلة
+        function sendViaWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // تحقق من تعبئة جميع الحقول
+            if (!name || !phone || !service || !message) {
+                alert('الرجاء تعبئة جميع الحقول المطلوبة');
+                return;
+            }
+            
+            // رقم واتساب الخاص بك
+            const whatsappNumber = "966123456789"; // استبدل برقمك الحقيقي
+            
+            // نص الرسالة
+            const whatsappMessage = `
+                *طلب تصميم جديد*
+                
+                *الاسم:* ${name}
+                *رقم الهاتف:* ${phone}
+                *نوع الخدمة:* ${service}
+                *الرسالة:*
+                ${message}
+            `;
+            
+            // ترميز النص لرابط URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // فتح واتساب مع الرسالة
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        }
+
+        // كود التمرير السلس
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
