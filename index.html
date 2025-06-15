@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSPIRO DESAIN - تصميمات إبداعية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* الأساسيات */
+        :root {
+            --primary-color: #4A00E0;
+            --secondary-color: #00C6FB;
+            --accent-color: #8E2DE2;
+            --background-color: #F8F9FA;
+            --text-color: #333333;
+            --light-text: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            direction: rtl;
+            background-image: url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* طبقة شفافة لتسهيل قراءة المحتوى */
+        .content-overlay {
+            background-color: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+        }
+
+        /* الهيدر */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin-left: 15px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            background: linear-gradient(135deg, rgba(74, 0, 224, 0.8), rgba(0, 198, 251, 0.8));
+            color: var(--light-text);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--light-text);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* قسم الخدمات */
+        .services {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1rem;
+            color: var(--light-text);
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+
+        /* قسم آراء العملاء */
+        .testimonials {
+            padding: 4rem 2rem;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: right;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* قسم اتصل بنا */
+        .contact {
+            padding: 4rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: right;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .submit-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-overlay">
+        <header>
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/50" alt="INSPIRO DESAIN Logo" class="logo">
+                <h1>INSPIRO DESAIN</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#testimonials">آراء العملاء</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2>إبداع بلا حدود في التصميم الرقمي</h2>
+                <p>نقدم حلول تصميم احترافية تناسب احتياجات عملك</p>
+                <a href="#contact" class="cta-button">اطلب تصميمك الآن</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>تصميم الشعارات</h3>
+                    <p>تصميم شعار فريد يعبر عن هوية علامتك التجارية</p>
+                    <img src="https://via.placeholder.com/300x180" alt="تصميم الشعارات" class="service-image">
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>تصميم البوسترات</h3>
+                    <p>تصاميم جذابة لافتاتك الدعائية والترويجية</p>
+                    <img src="https://via.placeholder.com/300x180" alt="تصميم البوسترات" class="service-image">
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>تصميم المواقع</h3>
+                    <p>مواقع إلكترونية متكاملة وسريعة الاستجابة</p>
+                    <img src="https://via.placeholder.com/300x180" alt="تصميم المواقع" class="service-image">
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>أنظمة الشركات</h3>
+                    <p>حلول برمجية لإدارة أعمالك بكفاءة</p>
+                    <img src="https://via.placeholder.com/300x180" alt="أنظمة الشركات" class="service-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2>آراء العملاء</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"لقد كان العمل مع INSPIRO DESAIN تجربة رائعة. الشعار الذي صمموه لنا يعبر تمامًا عن هوية علامتنا التجارية."</p>
+                    <p class="testimonial-author">- أحمد محمد، مدير تسويق</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"الموقع الإلكتروني الذي صمموه لنا ساعد في زيادة مبيعاتنا بنسبة 40%. فريق محترف جدًا."</p>
+                    <p class="testimonial-author">- سارة خالد، صاحبة متجر إلكتروني</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"البوسترات الدعائية التي صمموها كانت مميزة وجذبت الكثير من العملاء لمعرضنا."</p>
+                    <p class="testimonial-author">- عمر عبدالله، منظم فعاليات</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>اتصل بنا</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="service">نوع الخدمة المطلوبة</label>
+                    <select id="service" class="form-group input">
+                        <option value="">اختر الخدمة</option>
+                        <option value="logo">تصميم شعار</option>
+                        <option value="poster">تصميم بوستر</option>
+                        <option value="website">تصميم موقع</option>
+                        <option value="system">أنظمة الشركات</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">الرسالة</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">إرسال الطلب</button>
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن الشركة</h3>
+                    <p>INSPIRO DESAIN تقدم حلول تصميم إبداعية وعالية الجودة منذ 2015.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#services" style="color: white; text-decoration: none;">الخدمات</a></li>
+                        <li><a href="#testimonials" style="color: white; text-decoration: none;">آراء العملاء</a></li>
+                        <li><a href="#contact" style="color: white; text-decoration: none;">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>معلومات الاتصال</h3>
+                    <p>البريد: info@inspiro.com</p>
+                    <p>الهاتف: +966 12 345 6789</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 INSPIRO DESAIN. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // يمكنك إضافة الأكواد الجافاسكريبت هنا
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
